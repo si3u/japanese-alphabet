@@ -1,0 +1,136 @@
+
+<html>
+<head>
+<title>Hiragana Test</title>
+<style>
+html {background:#faffd2}
+
+.center {text-align:center; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:navy}
+.content {width:80%; background:#ffffff; padding:10px}
+.date {background:#ffffff; text-align:left; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:navy; top:10px}
+.email {background:#ffffff; text-align:left; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:#ff0000; top:10px}
+.fade {font-weight:bold; font-size:25pt; font-family:verdana, helvetica, arial, sans-serif}
+.main {text-align:justify; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:#002B3D; margin:10px}
+.italic {text-align:justify; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:#002B3D; font-style:italic; margin:10px}
+.navy {font-family:verdana, helvetica, arial, sans-serif; font-weight:bold; font-size:10pt; color:navy}
+.newsmain {font-weight:normal; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; text-align:justify; color:#002B3D}
+.red {font-family:verdana, helvetica, arial, sans-serif; font-style:italic; font-size:8pt; color:red}
+.extract {text-align:left; font-family: "Times New Roman", serif; font-size:11pt; font-weight:normal; padding:10px; background:#ffffff; width:60%} 
+
+a:link {color:#0000ff}
+a:visited {color:#0000ff}
+a:hover {color:#ff0000}
+
+div.box {background:#ffffff; font-weight:normal; font-size:8pt; font-family:verdana, helvetica, arial, sans-serif; color:#002B3D; border-top:solid 1px; border-bottom:solid 1px; padding:5px; border-color:#ff0000; width:98%; line-height:15px; text-align:justify}
+div.mainbold {font-weight:bold; font-size:10pt; font-family:arial, sans-serif; color:navy}
+div.menubar {background:#ffffff; font-weight:bold; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:#002B3D; border-top :solid 1px; border-bottom :solid 1px; border-color:#ff0000; position:absolute; top:5px; width:98%; height:20px}
+div.menuheader {text-align:center; width:15%; position:absolute }
+div.page {margin-left:15%; width:70%; background-color:#ffffff}
+
+
+h1 {text-align:center; margin-top:0px; margin-bottom:5px; color:#f1ae02; font-weight:normal; font-size:20pt; font-family: verdana, helvetica, arial, sans-serif}
+h2 {text-align:left; color:#f1ae02; font-weight:normal; font-size:18pt; font-family:"new century schoolbook", "Times New Roman", serif; margin:10px}
+h3 {text-align:center; color:navy; font-weight:bold; font-size:12pt; font-family: verdana, helvetica, arial, sans-serif}
+h4 {text-align:center; color:navy; font-weight:normal; font-size:10pt; font-family: verdana, helvetica, arial, sans-serif}
+h5 {text-align:left; color:navy; font-style:italic; font-size:10pt; font-family: verdana, helvetica, arial, sans-serif}
+
+img.left {float:left}
+img.right {float:right}
+
+li {list-style:none}
+li.main {list-style:none; font-weight:bold; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:navy; cursor:pointer}li.menu {list-style:none; font-weight:normal; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif}
+li.menu {list-style:none; font-weight:normal; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif}
+p.bold {text-align:justify; font-weight:bold; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:navy; margin:10px}
+p.right {text-align:right; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; color:navy}
+p.obit {width:450px; background:#ffffff; font-size:10pt; font-family:"new century schoolbook", "Times New Roman", serif; color:black; margin:10px; padding:5px}
+p.footnote {text-align:left; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif; font-style:italic; color:purple}
+p#scroll {font-weight: bold; font-size:12pt; font-family:arial, sans-serif; color:red}
+
+table {text-align:center; border:thin; color:navy; font-weight:bold; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif}
+table.left {border:thin; color:navy; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif}
+table.color {border:thin; color:navy; font-size:10pt; font-family:verdana, helvetica, arial, sans-serif}
+td.menu_left {text-align:left; width:15%; background:#ffffff; padding:5px; background:#e4e388; border:solid 1px; border-color:#0fb608}
+td.content {text-align:left; width:60%; background:transparent}
+
+td.menu_right {width:15%; background:#e4e388; padding:5px; border:solid 1px; border-color:#0fb608}
+th {font-size:10pt; font-weight:bold; font-family: verdana, helvetica, arial, sans-serif; background:#ffffff; color:navy; text-align:center}
+.header {font-size:12pt; font-weight:bold; font-family: verdana, helvetica, arial, sans-serif; background:#ffffff; color:#0fb608; text-align:center}
+
+ul {margin:0px; padding:0px}
+</style>
+<script type="text/javascript">
+var rNum, rChar
+var icorr, iwrong
+icorr = 0
+iwrong = 0
+function set_question(){
+rNum = Math.round(Math.random()*43)+65393
+rChar = "&#" + rNum + ";"
+document.getElementById("question").innerHTML = rChar
+}
+
+function display_score(){
+document.getElementById("right").innerHTML = icorr
+document.getElementById("wrong").innerHTML = iwrong
+}
+
+function check(x){
+if (document.getElementById(rNum).style.background = "red"){
+document.getElementById(rNum).style.background = "#faffd2"
+}
+if (parseInt(x) == rNum){
+icorr++
+display_score()
+set_question()
+}
+else{
+document.getElementById(rNum).style.background = "red"
+iwrong++
+display_score()
+icorr--
+}
+}
+</script>
+<style text="text/css">
+#question {font-size:20pt; color:red; text-align:center}
+#score {font-size:12pt; font-weight:bold; font-family:Verdana, Helvetica; color:red}
+td {width:45pt; font-size:16pt; font-family:Verdana, Helvetica; color:blue; text-align:center; cursor:pointer; cursor:hand}
+</style>
+</head>
+
+<body onload="set_question()">
+<h1>Katakana Test (&#65398;&#65408;&#65398;&#65413;&nbsp;&#65411;&#65405;&#65412;)</h1>
+<p class="main">A little something I devised to help me with my Japanese studies. Click on the English equivalent of the character displayed. If you are incorrect the correct answer will be highlighted - click on it to set a new character.</p>
+<div id="question"></div>
+<br>
+<div align="center">
+<table border>
+<tr>
+<td id="65393" onClick="check(this.id)">a</td><td id="65394" onClick="check(this.id)">i</td><td id="65395" onClick="check(this.id)">u</td><td id="65396" onClick="check(this.id)">e</td><td id="65397" onClick="check(this.id)">o</td>
+</tr>
+<tr>
+<td id="65398" onClick="check(this.id)">ka</td><td id="65399" onClick="check(this.id)">ki</td><td id="65400" onClick="check(this.id)">ku</td><td id="65401" onClick="check(this.id)">ke</td><td id="65402" onClick="check(this.id)">ko</td>
+</tr>
+<tr>
+<td id="65403" onClick="check(this.id)">sa</td><td id="65404" onClick="check(this.id)">shi</td><td id="65405" onClick="check(this.id)">su</td><td id="65406" onClick="check(this.id)">se</td><td id="65407" onClick="check(this.id)">so</td>
+</tr>
+<tr>
+<td id="65408" onClick="check(this.id)">ta</td><td id="65409" onClick="check(this.id)">chi</td><td id="65410" onClick="check(this.id)">tsu</td><td id="65411" onClick="check(this.id)">te</td><td id="65412" onClick="check(this.id)">to</td>
+</tr>
+<td id="65413" onClick="check(this.id)">na</td><td id="65414" onClick="check(this.id)">ni</td><td id="65415" onClick="check(this.id)">nu</td><td id="65416" onClick="check(this.id)">ne</td><td id="65417" onClick="check(this.id)">no</td>
+</tr>
+<td id="65418" onClick="check(this.id)">ha</td><td id="65419" onClick="check(this.id)">hi</td><td id="65420" onClick="check(this.id)">fu</td><td id="65421" onClick="check(this.id)">he</td><td id="65422" onClick="check(this.id)">ho</td>
+</tr>
+<td id="65423" onClick="check(this.id)">ma</td><td id="65424" onClick="check(this.id)">mi</td><td id="65425" onClick="check(this.id)">mu</td><td id="65426" onClick="check(this.id)">me</td><td id="65427" onClick="check(this.id)">mo</td>
+</tr>
+<td id="65428" onClick="check(this.id)">ya</td><td onClick="check(this.id)">&nbsp;</td><td id="65429" onClick="check(this.id)">yu</td><td onClick="check(this.id)">&nbsp;</td><td id="65430" onClick="check(this.id)">yo</td>
+</tr>
+<td id="65431" onClick="check(this.id)">ra</td><td id="65432" onClick="check(this.id)">ri</td><td id="65433" onClick="check(this.id)">ru</td><td id="65434" onClick="check(this.id)">re</td><td id="65435" onClick="check(this.id)">ro</td>
+</tr>
+<td id="65436" onClick="check(this.id)">wa</td><td id="65437" onClick="check(this.id)">n</td><td onClick="check(this.id)">&nbsp;</td><td onClick="check(this.id)">&nbsp;</td><td><button onclick="location.reload()">Reset</button></td>
+</tr>
+</table>
+</div>
+</body>
+</body>
+</html>
